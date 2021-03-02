@@ -17,7 +17,9 @@ try:
 	# get PATH
 	path = os.getcwd() + "\driver\chromedriver.exe"
 
-	driver = webdriver.Chrome(path)
+	args = ["hide_console", ]
+
+	driver = webdriver.Chrome(path, service_args=args)
 
 	driver.get("https://www.uanl.mx/enlinea/")
 
