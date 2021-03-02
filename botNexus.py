@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains as ac
+import os
 
 try:
 	with open('data.txt', 'r') as fname:
@@ -13,7 +14,10 @@ try:
 
 		fname.close()
 
-	driver = webdriver.Chrome("C:\webdrivers\chromedriver.exe")
+	# get PATH
+	path = os.getcwd() + "\driver\chromedriver.exe"
+
+	driver = webdriver.Chrome(path)
 
 	driver.get("https://www.uanl.mx/enlinea/")
 
